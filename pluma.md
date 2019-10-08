@@ -4,20 +4,20 @@ Pluma text editor is preinstalled on MATE DE. It may be called from terminal as 
 
 ## Pluma extensions
 
-Enable all Pluma extensions by visiting *Edit* → *Preferences*, switch to *Plugins* tab and compare their list with the table below:
+Visit *Edit* → *Preferences*, switch to *Plugins* tab, then enable all Pluma extensions by doing right mouse click and selecting *Enable All* (or *Activate All*) and compare their list with the table below:
 
 | Active Plugins               | 16.04 LTS | 18.04 LTS | 19.04 | 19.10 |
 |------------------------------|-----------|-----------|-------|-------|
 | Change Case                  |     +     |     +     |   +   |   +   |
 | Document Statistics          |     +     |     +     |   +   |   +   |
-| External Tools               |     +     |    n/a    |   +   |   -   |
+| External Tools               |     +     |    n/a    |   +   |   +   |
 | File Browser Pane            |     +     |     +     |   +   |   +   |
 | Insert Date/Time             |     +     |     +     |   +   |   +   |
 | Modelines                    |     +     |     +     |   +   |   +   |
-| Python Console               |     +     |    n/a    |   +   |   -   |
-| Quick Open                   |     +     |    n/a    |   +   |   -   |
+| Python Console               |     +     |    n/a    |   +   |   +   |
+| Quick Open                   |     +     |    n/a    |   +   |   +   |
 | Save Without Trailing Spaces |     +     |     +     |   +   |   +   |
-| Snippets                     |     +     |    n/a    |   +   |   -   |
+| Snippets                     |     +     |    n/a    |   +   |   +   |
 | Sort                         |     +     |     +     |   +   |   +   |
 | Spell Checker                |     +     |     +     |   +   |   +   |
 | Tag list                     |     +     |     +     |   +   |   +   |
