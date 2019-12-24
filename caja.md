@@ -85,6 +85,32 @@ Expected results:
 
 * Caja stopped USB hard disk. It does not rotate anymore.
 
+## Caja scripts
+
+Caja allows to use custom scripts.
+
+Steps to test:
+
+1. Create folder with scripts with `mkdir -p ~/.config/caja/scripts`
+1. Add simple script named `Open Terminal` with
+
+        cat <<EOF > ~/.config/caja/scripts/Open-Terminal-Here
+        #!/bin/bash
+        
+        # Created by oss-lvr (https://github.com/oss-lvr)
+        # Open a terminal from anywhere
+        
+        mate-terminal $CAJA_SCRIPT_CURRENT_URI
+        EOF
+
+  and make it executable with `chmod +x ~/.config/caja/scripts/Open-Terminal-Here`
+
+1. Go to some folder, then navigate to or select some folder and click *File*→*Scripts*→*Open-Terminal-Here*
+
+Expected results:
+
+* The MATE Terminal is opened in the location of current (or selected) folder.
+
 ## Caja extensions
 
 Install all Caja extensions with the following command:
@@ -248,9 +274,9 @@ To check errors and warnings during Caja restart:
 
 Expected results:
 
-* the are no serious messages with `Error`, `Warning`, `Critical` text 
+* the are no serious messages with `Error`, `Warning`, `Critical` text
 
-## Errors and warnings about Caja itself, Caja-Python and so on.
+## Errors and warnings about Caja itself, Caja-Python and so on
 
 The following example may be considered as safe:
 
