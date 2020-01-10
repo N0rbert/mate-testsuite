@@ -103,7 +103,7 @@ Steps to test:
         mate-terminal $CAJA_SCRIPT_CURRENT_URI
         EOF
 
-  and make it executable with `chmod +x ~/.config/caja/scripts/Open-Terminal-Here`
+    and make it executable with `chmod +x ~/.config/caja/scripts/Open-Terminal-Here`
 
 1. Go to some folder, then navigate to or select some folder and click *File*→*Scripts*→*Open-Terminal-Here*
 
