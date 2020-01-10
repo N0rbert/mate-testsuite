@@ -2,6 +2,18 @@
 
 Pluma text editor is preinstalled on MATE DE. It may be called from terminal as `pluma`.
 
+## Print preview
+
+Steps to test:
+
+1. Open Pluma
+1. Write some text
+1. Select *File*→*Print Preview* (or use `<Shift>+<Ctrl>+<P>`)
+
+Expected result:
+
+* Tab of current document changed to print preview until user presses `<Esc>`. 
+
 ## Pluma extensions
 
 Visit *Edit* → *Preferences*, switch to *Plugins* tab, then enable all Pluma extensions by doing right mouse click and selecting *Enable All* (or *Activate All*) and compare their list with the table below:
