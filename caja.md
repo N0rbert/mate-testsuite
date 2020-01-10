@@ -94,14 +94,14 @@ Steps to test:
 1. Create folder with scripts with `mkdir -p ~/.config/caja/scripts`
 1. Add simple script named `Open Terminal` with
 
-        cat <<EOF > ~/.config/caja/scripts/Open-Terminal-Here
-        #!/bin/bash
-        
-        # Created by oss-lvr (https://github.com/oss-lvr)
-        # Open a terminal from anywhere
-        
-        mate-terminal $CAJA_SCRIPT_CURRENT_URI
-        EOF
+       cat <<EOF > ~/.config/caja/scripts/Open-Terminal-Here
+       #!/bin/bash
+       
+       # Created by oss-lvr (https://github.com/oss-lvr)
+       # Open a terminal from anywhere
+       
+       mate-terminal $CAJA_SCRIPT_CURRENT_URI
+       EOF
 
     and make it executable with `chmod +x ~/.config/caja/scripts/Open-Terminal-Here`
 
@@ -204,14 +204,14 @@ Installation:
 
 * on 16.04 LTS it is installable with manual steps with method from [this AskUbuntu Q&A](https://askubuntu.com/a/1132783/66509):
 
-        sudo apt-get install tortoisehg-nautilus caja-extensions-common python-caja
+      sudo apt-get install tortoisehg-nautilus caja-extensions-common python-caja
 
-        mkdir -p ~/.local/share/caja-python/extensions
-        cp /usr/share/nautilus-python/extensions/nautilus-thg.py ~/.local/share/caja-python/extensions/caja-thg.py
+      mkdir -p ~/.local/share/caja-python/extensions
+      cp /usr/share/nautilus-python/extensions/nautilus-thg.py ~/.local/share/caja-python/extensions/caja-thg.py
 
-        sudo apt-get purge tortoisehg-nautilus
-        sudo apt-get autoremove
-        sudo apt-get install tortoisehg mercurial
+      sudo apt-get purge tortoisehg-nautilus
+      sudo apt-get autoremove
+      sudo apt-get install tortoisehg mercurial
 
 * on 18.04 LTS and 19.04 you can use `sudo apt-get install tortoisehg-caja`;
 * on 19.10 it is not installable.
@@ -235,23 +235,23 @@ Installation:
 
 * for 16.04 LTS, 18.04 LTS and 19.04 install RabbitVCS with method similar to [this AskUbuntu Q&A](https://askubuntu.com/a/1149104/66509):
 
-        sudo apt install rabbitvcs-cli python-caja
+      sudo apt install rabbitvcs-cli python-caja
 
-        mkdir -p ~/.local/share/caja-python/extensions
-        cd ~/.local/share/caja-python/extensions
-        wget https://raw.githubusercontent.com/rabbitvcs/rabbitvcs/v0.16/clients/caja/RabbitVCS.py
-        caja -q
-        caja
+      mkdir -p ~/.local/share/caja-python/extensions
+      cd ~/.local/share/caja-python/extensions
+      wget https://raw.githubusercontent.com/rabbitvcs/rabbitvcs/v0.16/clients/caja/RabbitVCS.py
+      caja -q
+      caja
 
 * for 19.10 use:
 
-        sudo apt install rabbitvcs-cli python-caja python-tk
+      sudo apt install rabbitvcs-cli python-caja python-tk
 
-        mkdir -p ~/.local/share/caja-python/extensions
-        cd ~/.local/share/caja-python/extensions
-        wget https://raw.githubusercontent.com/rabbitvcs/rabbitvcs/v0.17.1/clients/caja/RabbitVCS.py
-        caja -q
-        caja
+      mkdir -p ~/.local/share/caja-python/extensions
+      cd ~/.local/share/caja-python/extensions
+      wget https://raw.githubusercontent.com/rabbitvcs/rabbitvcs/v0.17.1/clients/caja/RabbitVCS.py
+      caja -q
+      caja
 
 Steps to test:
 
