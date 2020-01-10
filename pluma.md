@@ -12,7 +12,7 @@ Steps to test:
 
 Expected result:
 
-* Tab of current document changed to print preview until user presses `<Esc>`. 
+* Tab of current document changed to print preview until user presses `<Esc>`.
 
 ## Pluma extensions
 

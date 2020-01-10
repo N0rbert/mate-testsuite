@@ -22,7 +22,7 @@ Steps to test:
 1. Open Caja
 1. Select *Edit* → *Backgrounds and Emblems*
 
-TBW (see https://askubuntu.com/a/1157888/66509 )
+TBW (see [ this AskUbuntu Q&A](https://askubuntu.com/a/1157888/66509))
 
 ## Create archive
 
@@ -298,7 +298,7 @@ To run a self-check use:
 caja --check
 ```
 
-it should end with the following output 
+it should end with the following output:
 
 ```
 running caja_self_check_file_utilities
