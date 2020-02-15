@@ -7,13 +7,26 @@ Caja file manager is preinstalled on MATE DE. It may be called from terminal as 
 Steps to test:
 
 1. Open Caja
-1. Press `<F3>`
+1. Press `<F3>` or use *View* → *Extra Pane*
 
 Expected results:
 
    * Caja opened extra pane in the right of already opened pane.
 
 Press `<F3>` again to close the extra pane.
+
+## Side pane in Caja
+
+Steps to test:
+
+1. Open Caja
+1. Press `<F9>` or use *View* → *Side Pane*
+
+Expected results:
+
+* Caja toggles the state of side pane in the left part of the window.
+
+Press `<F9>` again to show side pane if it is hidden.
 
 ## Folder backgrounds and emblems
 
@@ -57,7 +70,46 @@ Expected results:
 * archive is created. Caja is able to open it with Engrampa using specified password.
 
 
-## Removable drives
+## Network connections and removable drives
+
+### Connect to Server
+
+Steps to test:
+
+1. Open Caja
+1. Select *File* → *Connect to Server* or launch `caja-connect-server`
+1. Enter all needed server details: server hostname or IP, port, type - *Apple Filing Protocol (AFP)*, *SSH*, *FTP (with login)*, *Public FTP*, *Windows share*, *WebDAV (HTTP)*, *Secure WebDAV (HTTPS)*
+1. Click *Connect*
+
+Expected results:
+
+* with correct server details Caja will open new window with network filesystem.
+
+### Connect to Server from Location bar
+
+Steps to test:
+
+1. Open Caja
+1. Press `<Ctrl>+<L>`
+1. Enter valid network location such as `sftp://user@hostname` (for SFTP/SSH connectio) or `ftp://hostname` (for insecure anonymous FTP connection) and click *Connect*
+1. Press `<Enter>`
+
+Expected results:
+
+* with correct server details Caja will open network filesystem in the current tab.
+
+### Disconnect from Server
+
+Steps to test:
+
+1. Open Caja
+1. Ensure that you have previously connected network filesystem
+1. Locate network filesystem in the left sidebar (press `<F9>` if it is hidden) in the *Network* category
+1. Click on the Eject button in the right of the network filesystem
+
+Expected results:
+
+* Caja is disconnected from the network filesystem, the *Network* category becomes empty.
 
 ### USB solid state flash disk Eject
 
@@ -193,10 +245,18 @@ Steps to test:
 
 Expected results:
 
-* The File conflict window is shown, it asks user to view differences. Pressing *Differences* will lead to Meld open for file comparison.
+* The *File conflict* window is shown, it asks user to view differences. Pressing *Differences* will lead to Meld open for file comparison.
 
 
 ### Installing third-party extensions
+
+#### Dropbox
+
+Installation is as simple as `sudo apt-get install caja-dropbox`. It will download proprietary installer and extract it to the `/var/lib/dropbox`. Then you need to restart Caja and provide your Dropbox credentials in the opened browser window to start using Dropbox.
+
+The autostart for Caja-Dropbox is controlled by `caja-dropbox-autostart`.
+
+The sync process is automatic, you will see the changes of the file-statuses in the `~/Dropbox` folder. All objects here have emblems.
 
 #### TortoiseHG
 
