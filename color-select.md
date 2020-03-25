@@ -5,6 +5,7 @@ MATE Color Selection is preinstalled on MATE DE. It may be called from terminal 
 ## Test
 
 Steps to test:
+
 1. Open MATE Color Selection
 1. Choose the needed color
 1. Copy its hex representation

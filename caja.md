@@ -2,7 +2,98 @@
 
 Caja file manager is preinstalled on MATE DE. It may be called from terminal as `caja`.
 
-## Extra pane in Caja
+## File menu
+
+### Open new tab in Caja
+
+Steps to test:
+
+1. Open Caja
+1. Click on *File* → *New tab* (or use `<Ctrl>+<T>`)
+1. Close newly opened tab
+
+Expected result:
+
+* Caja opened new tab, user is able to close it.
+
+### Open new window for Caja
+
+Steps to test:
+
+1. Open Caja
+1. Click on *File* → *New window* (or use `<Ctrl>+<N>`)
+1. Close newly opened Caja window
+
+Expected result:
+
+* Caja opened new window, user is able to close it.
+
+### Create new Folder
+
+Steps to test:
+
+1. Open Caja
+1. Click on *File* → *Create folder* (or use `<Shift>+<Ctrl>+<N>`)
+1. Delete newly created folder
+
+Expected result:
+
+* Caja created new folder, user is able to delete it.
+
+### Create new Document
+
+Steps to test:
+
+1. Open Caja
+1. Click on *File* → *Create Document*, *Empty File*
+1. Delete newly created document
+
+Expected result:
+
+* Caja created new document, user is able to delete it.
+
+#### Create template for new Document and use it
+
+Steps to test:
+
+1. Open LibreOffice Writer and save document to `~/Templates` folder with name `odt-document.odt`
+1. Open Caja
+1. Click on *File* → *Create Document*, *odt-document* (with LibreOffice Writer icon)
+1. Delete newly created document
+
+Expected result:
+
+* Caja created new ODT-document using template, user is able to delete it.
+
+### Connect to Server
+
+Steps to test:
+
+1. Open Caja
+1. Select *File* → *Connect to Server* or launch `caja-connect-server`
+1. Enter all needed server details: server hostname or IP, port, type - *Apple Filing Protocol (AFP)*, *SSH*, *FTP (with login)*, *Public FTP*, *Windows share*, *WebDAV (HTTP)*, *Secure WebDAV (HTTPS)*
+1. Click *Connect*
+
+Expected results:
+
+* with correct server details Caja will open new window with network filesystem.
+
+### Viewing item Properties
+
+Steps to test:
+
+1. Open Caja
+1. Navigate to the `/` folder
+1. Select `boot` folder
+1. Click on *File* → *Properties* or use `<Alt>+<Return>`
+
+Expected results:
+
+* Caja shows the properties for selected folder.
+
+## View menu
+
+### Extra pane in Caja
 
 Steps to test:
 
@@ -15,7 +106,7 @@ Expected results:
 
 Press `<F3>` again to close the extra pane.
 
-## Side pane in Caja
+### Side pane in Caja
 
 Steps to test:
 
@@ -28,6 +119,24 @@ Expected results:
 
 Press `<F9>` again to show side pane if it is hidden.
 
+## Edit menu
+
+### Send file to removable media
+
+Caja allows to send items to the other location using special `caja-sendto` application.
+
+Steps to test:
+
+1. Connect USB-flash to the system
+1. Open Caja
+1. Select some file, click *Edit* → *Send to*
+1. In the *Send To* window set *Send as* to *Removable disks and shares* and in *Send to* select location of USB-flash, click *Send*
+1. Open USB-flash in the Caja and ensure that file was copied here
+
+Expected result:
+
+* Caja is able to send items to USB-flash.
+
 ## Folder backgrounds and emblems
 
 Steps to test:
@@ -36,6 +145,9 @@ Steps to test:
 1. Select *Edit* → *Backgrounds and Emblems*
 
 TBW (see [ this AskUbuntu Q&A](https://askubuntu.com/a/1157888/66509))
+
+
+---
 
 ## Create archive
 
@@ -71,19 +183,6 @@ Expected results:
 
 
 ## Network connections and removable drives
-
-### Connect to Server
-
-Steps to test:
-
-1. Open Caja
-1. Select *File* → *Connect to Server* or launch `caja-connect-server`
-1. Enter all needed server details: server hostname or IP, port, type - *Apple Filing Protocol (AFP)*, *SSH*, *FTP (with login)*, *Public FTP*, *Windows share*, *WebDAV (HTTP)*, *Secure WebDAV (HTTPS)*
-1. Click *Connect*
-
-Expected results:
-
-* with correct server details Caja will open new window with network filesystem.
 
 ### Connect to Server from Location bar
 

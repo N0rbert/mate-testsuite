@@ -5,13 +5,14 @@ About me is preinstalled on MATE DE. It may be called from terminal as `mate-abo
 ## Setting avatar
 
 Steps to test:
+
 1. Open About me from terminal or from `<Alt>+<F2>` menu
 1. Click on big image button and select the image you like (from default `/usr/share/pixmaps/faces/` or any other location) and click *Open*
 1. Click on the top right button in the MATE Panel
 
 Expected results:
 
-* the avatar image is set, you can see its in session menu (top right button in the MATE Panel).
+* the avatar image is set, you can see it in session menu (top right button in the MATE Panel).
 
 ## Changing password
 
@@ -27,5 +28,4 @@ Steps to test:
 Expected results:
 
 * the password was changed, user can login with new password.
-
 

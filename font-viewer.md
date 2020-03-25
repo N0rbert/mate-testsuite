@@ -5,6 +5,7 @@ MATE Font Viewer is preinstalled on MATE DE. It may be called from terminal as `
 ## Viewing all fonts
 
 Steps to test:
+
 1. Open MATE Font Viewer
 1. Wait application to show previews of all installed fonts
 1. Scroll to the end of the font list
@@ -16,6 +17,7 @@ Expected results:
 ## Viewing single font
 
 Steps to test:
+
 1. Open MATE Font Viewer
 1. Wait application to show previews of all installed fonts
 1. Click on needed font name
@@ -27,6 +29,7 @@ Expected results:
 ## Searching for the font
 
 Steps to test:
+
 1. Open MATE Font Viewer
 1. Wait application to show previews of all installed fonts
 1. Click on the *Search* button

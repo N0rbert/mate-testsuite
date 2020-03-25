@@ -5,6 +5,7 @@ MATE Calculator is preinstalled on MATE DE. Its GUI version may be called from t
 ## Terminal calculator
 
 Steps to test:
+
 1. Open MATE Terminal
 1. Execute `mate-calc-cmd`
 1. Try to do some math like `2+2` and click `<Enter>`
