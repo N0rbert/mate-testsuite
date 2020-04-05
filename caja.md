@@ -146,7 +146,6 @@ Steps to test:
 
 TBW (see [ this AskUbuntu Q&A](https://askubuntu.com/a/1157888/66509))
 
-
 ---
 
 ## Create archive
@@ -272,60 +271,60 @@ sudo apt install $(apt-cache search caja | awk '{print $1}')
 
 restart Caja with `caja -q` and then go to *Edit* → *Preferences* (or run `caja-file-management-properties`), switch to *Extensions* and compare their list with the table below:
 
-| Available Extensions       | 16.04 LTS | 18.04 LTS |  19.10 |
-|----------------------------|-----------|-----------|--------|
-| libgtkhash-properties-caja |    n/a    |     +     |    +   |
-| libcaja-seahorse           |    n/a    |     +     |    +   |
-| Image Converter            |     +     |     +     |    +   |
-| Share                      |     +     |     +     |    +   |
-| User Share                 |    n/a    |    n/a    |    +   |
-| Open terminal              |     +     |     +     |    +   |
-| libcaja-actions-tracker    |     +     |     +     |    +   |
-| libcaja-actions-menu       |     +     |     +     |    +   |
-| Wallpaper                  |     +     |     +     |    +   |
-| Python: caja-thg           |   manual  |     +     |   n/a  |
-| Python: caja-admin         |    n/a    |     +     |    +   |
-| Python: folder-color       |    n/a    |     +     |    +   |
-| Python: deja (or *dejadup*)|    n/a    |     +     |    +   |
-| Python: syncstate-ownCloud |    n/a    |     +     |    +   |
-| Python: syncstate-Nextcloud|    n/a    |    n/a    |    +   |
-| Python: caja-rename        |    n/a    |     +     |    +   |
-| Python: caja-mediainfo-tab |    n/a    |    n/a    |    +   |
-| Python: insync-caja-plugin |    n/a    |    n/a    |    +   |
-| libeiciel-caja             |    n/a    |     +     |    +   |
-| xattr Tags                 |    n/a    |     +     |    +   |
-| Atril properties           |    n/a    |     +     |    +   |
-| Gksu                       |     +     |    n/a    |   n/a  |
-| Engrampa                   |     +     |     +     |    +   |
-| Caja Dropbox               |     +     |     +     |    +   |
-| Send To                    |     +     |     +     |    +   |
-| libfma-caja-tracker        |    n/a    |    n/a    |    +   |
-| libfma-caja-menu           |    n/a    |    n/a    |    +   |
+| Available Extensions        | 16.04 LTS | 18.04 LTS | 19.10 | 20.04 LTS |
+| --------------------------- | --------- | --------- | ----- | --------- |
+| libgtkhash-properties-caja  | n/a       | +         | +     | +         |
+| libcaja-seahorse            | n/a       | +         | +     | +         |
+| Image Converter             | +         | +         | +     | +         |
+| Share                       | +         | +         | +     | +         |
+| User Share                  | n/a       | n/a       | +     | n/a       |
+| Open terminal               | +         | +         | +     | +         |
+| libcaja-actions-tracker     | +         | +         | +     | +         |
+| libcaja-actions-menu        | +         | +         | +     | +         |
+| Wallpaper                   | +         | +         | +     | +         |
+| Python: caja-thg            | manual    | +         | n/a   | n/a       |
+| Python: caja-admin          | n/a       | +         | +     | +         |
+| Python: folder-color        | n/a       | +         | +     | +         |
+| Python: deja (or *dejadup*) | n/a       | +         | +     | +         |
+| Python: syncstate-ownCloud  | n/a       | +         | +     | +         |
+| Python: syncstate-Nextcloud | n/a       | n/a       | +     | +         |
+| Python: caja-rename         | n/a       | +         | +     | +         |
+| Python: caja-mediainfo-tab  | n/a       | n/a       | +     | +         |
+| Python: insync-caja-plugin  | n/a       | n/a       | +     | n/a       |
+| libeiciel-caja              | n/a       | +         | +     | +         |
+| xattr Tags                  | n/a       | +         | +     | +         |
+| Atril properties            | n/a       | +         | +     | +         |
+| Gksu                        | +         | n/a       | n/a   | n/a       |
+| Engrampa                    | +         | +         | +     | +         |
+| Caja Dropbox                | +         | +         | +     | +         |
+| Send To                     | +         | +         | +     | +         |
+| libfma-caja-tracker         | n/a       | n/a       | +     | +         |
+| libfma-caja-menu            | n/a       | n/a       | +     | +         |
 
 Also check the Caja window for the interface elements from the table:
 
-| Package name         | Interface items                                  | 16.04 LTS | 18.04 LTS | 19.10 |
-|----------------------|--------------------------------------------------|-----------|-----------|-------|
-| caja-actions         | *Caja-Actions Actions* [^1]                      |     +     |     +     |  +    |
-| caja-admin           | *Open as Administrator*, *Edit as Administrator* |     +     |     +     |  +    |
-| caja-eiciel          | *Properties* → *Access Control Lists*            |    n/a    |     +     |  +    |
-| caja-extension-fma   | *FileManager-Actions Actions* [^2]               |    n/a    |    n/a    |  +    |
-| caja-gtkhash         | *Properties* → *Digests*                         |    n/a    |     +     |  +    |
-| caja-image-converter | *Resize Images*, *Rotate Images*                 |     +     |     +     |  +    |
-| caja-mediainfo       | special mediainfo tab                            |    n/a    |    n/a    |  ?    |
-| caja-nextcloud       | ???                                              |    n/a    |    n/a    |  ?    |
-| caja-open-terminal   | *Open in Terminal*                               |     +     |     +     |  +    |
-| caja-owncloud        | ???                                              |    n/a    |     ?     |  ?    |
-| caja-rename          | *Rename*                                         |    n/a    |     +     |  +    |
-| caja-seahorse        | *Encrypt*, *Sign*                                |    n/a    |     +     |  +    |
-| caja-sendto          | *Send to*                                        |     +     |     +     |  +    |
-| caja-share           | *Sharing Options*, *Properties* → *Share*        |     +     |     +     |  +    |
-| caja-wallpaper       | *Set as wallpaper*                               |     +     |     +     |  +    |
-| caja-xattr-tags      | *Tags* column                                    |    n/a    |     +     |  +    |
-| deja-dup-caja        | *Revert to Previous version*,*Restore Missing...*|     +     |     +     |  +    |
-| folder-color-caja    | *Folder's Color*, *File's Emblem*                |     +     |     +     |  +    |
-| nitroshare-caja      | ???                                              |    n/a    |     ?     |  ?    |
-| caja-dropbox         | Dropbox folder and Dropbox menu                  |    n/a    |     +     |  +    |
+| Package name         | Interface items                                   | 16.04 LTS | 18.04 LTS | 19.10 | 20.04 LTS |
+| -------------------- | ------------------------------------------------- | --------- | --------- | ----- | --------- |
+| caja-actions         | *Caja-Actions Actions* [^1]                       | +         | +         | +     | +         |
+| caja-admin           | *Open as Administrator*, *Edit as Administrator*  | +         | +         | +     | +         |
+| caja-eiciel          | *Properties* → *Access Control Lists*             | n/a       | +         | +     | +         |
+| caja-extension-fma   | *FileManager-Actions Actions* [^2]                | n/a       | n/a       | +     | +         |
+| caja-gtkhash         | *Properties* → *Digests*                          | n/a       | +         | +     | +         |
+| caja-image-converter | *Resize Images*, *Rotate Images*                  | +         | +         | +     | +         |
+| caja-mediainfo       | special mediainfo tab                             | n/a       | n/a       | ?     | +         |
+| caja-nextcloud       | ???                                               | n/a       | n/a       | ?     | ?         |
+| caja-open-terminal   | *Open in Terminal*                                | +         | +         | +     | +         |
+| caja-owncloud        | ???                                               | n/a       | ?         | ?     | ?         |
+| caja-rename          | *Rename*                                          | n/a       | +         | +     | +         |
+| caja-seahorse        | *Encrypt*, *Sign*                                 | n/a       | +         | +     | +         |
+| caja-sendto          | *Send to*                                         | +         | +         | +     | +         |
+| caja-share           | *Sharing Options*, *Properties* → *Share*         | +         | +         | +     | +         |
+| caja-wallpaper       | *Set as wallpaper*                                | +         | +         | +     | +         |
+| caja-xattr-tags      | *Tags* column                                     | n/a       | +         | +     | +         |
+| deja-dup-caja        | *Revert to Previous version*,*Restore Missing...* | +         | +         | +     | +         |
+| folder-color-caja    | *Folder's Color*, *File's Emblem*                 | +         | +         | +     | +         |
+| nitroshare-caja      | ???                                               | n/a       | ?         | ?     | ?         |
+| caja-dropbox         | Dropbox folder and Dropbox menu                   | n/a       | +         | +     | +         |
 
 [^1]: to get Caja Actions submenu we need to create custom action from `caja-actions-config-tool` - press *File* → *New action*, go to *Command* tab and the following into *Path* - `zenity --info --text=%b` and then click *File* → *Save*. Then close Caja with `caja -q` and open it again, select some item and make right click on it, then select *Caja-Actions Actions actions* → *New Caja Action*. This will end with showing Information window with the text indicating current item name.
 
@@ -364,16 +363,16 @@ Installation:
 * on 16.04 LTS it is installable with manual steps with method from [this AskUbuntu Q&A](https://askubuntu.com/a/1132783/66509):
 
       sudo apt-get install tortoisehg-nautilus caja-extensions-common python-caja
-
+        
       mkdir -p ~/.local/share/caja-python/extensions
       cp /usr/share/nautilus-python/extensions/nautilus-thg.py ~/.local/share/caja-python/extensions/caja-thg.py
-
+        
       sudo apt-get purge tortoisehg-nautilus
       sudo apt-get autoremove
       sudo apt-get install tortoisehg mercurial
 
 * on 18.04 LTS and 19.04 you can use `sudo apt-get install tortoisehg-caja`;
-* on 19.10 it is not installable.
+* on 19.10 and 20.04 LTS it is not installable.
 
 After installation restart Caja with `caja -q && caja`.
 
@@ -394,8 +393,8 @@ Installation:
 
 * for 16.04 LTS, 18.04 LTS and 19.04 install RabbitVCS with method similar to [this AskUbuntu Q&A](https://askubuntu.com/a/1149104/66509):
 
-      sudo apt install rabbitvcs-cli python-caja
-
+      sudo apt install rabbitvcs-cli python-caja python-tk git mercurial subversion
+        
       mkdir -p ~/.local/share/caja-python/extensions
       cd ~/.local/share/caja-python/extensions
       wget https://raw.githubusercontent.com/rabbitvcs/rabbitvcs/v0.16/clients/caja/RabbitVCS.py
@@ -404,24 +403,47 @@ Installation:
 
 * for 19.10 use:
 
-      sudo apt install rabbitvcs-cli python-caja python-tk
-
+      sudo apt install rabbitvcs-cli python-caja python-tk git mercurial subversion
+        
       mkdir -p ~/.local/share/caja-python/extensions
       cd ~/.local/share/caja-python/extensions
       wget https://raw.githubusercontent.com/rabbitvcs/rabbitvcs/v0.17.1/clients/caja/RabbitVCS.py
       caja -q
       caja
 
+* for 20.04 LTS use:
+
+      sudo apt install rabbitvcs-cli python3-caja python3-tk git mercurial subversion
+      
+      mkdir -p ~/.local/share/caja-python/extensions
+      cd ~/.local/share/caja-python/extensions
+      wget https://raw.githubusercontent.com/rabbitvcs/rabbitvcs/v0.18/clients/caja/RabbitVCS.py
+      caja -q
+      caja
+
+
 Steps to test:
 
 1. Open Caja
-1. Navigate to any folder
-1. Make right mouse click on the folder - it should show *RabbitVCS SVN*, *RabbitVCS Git*, *RabbitVCS Hg* menus with rabbit icon.
-1. Click on the *RabbitVCS Git* → *Initialize Repository*. This will open Initialize Repository window. Close it by pressing OK and press `<F5>` in the Caja window.
+1. Do one of the following:
+
+   * Prepare folders which are controlled by version control systems:
+
+          mkdir /tmp/vcs
+          git init /tmp/vcs/git
+          hg init /tmp/vcs/hg
+          svnadmin create /tmp/vcs/svn
+          touch /tmp/vcs/{git,hg,svn}/empty
+
+     and navigate to the `/tmp/vcs` folder using Caja. Make right mouse click on each folded and select *Commit*.
+
+   * Make right mouse click on some temporary folder - it should show *RabbitVCS SVN*, *RabbitVCS Git*, *RabbitVCS Hg* menus with rabbit icon.
+
+1. Click on the *RabbitVCS Git* → *Initialize Repository*. This will open Initialize Repository window. Close it by pressing OK and press `<F5>` in the Caja window. Repeat the method for SVN and Hg.
 
 Expected results:
 
-* RabbitVCS Git repository is created, the freshly created repository has green checkmark icon/emblem shown on top of it.
+* RabbitVCS repositories are created, freshly created repositories have green checkmark (or question mark) icon/emblem shown on top of it.
 
 ## Check error output on Caja restart
 
@@ -470,7 +492,6 @@ running caja_self_check_file_operations
 running caja_self_check_directory
 running caja_self_check_file
 running caja_self_check_icon_container
-
 ```
 
 and zero exit-code (check it with `echo $?`).
