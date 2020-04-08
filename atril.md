@@ -299,15 +299,15 @@ Expected results:
 
 Atril is shipped with two special helper applications:
 
-+ `atril-previewer` - to show print preview for a document
-+ `atril-thumbnailer` - to create  png thumbnails from atril supported documents
+* `atril-previewer` - to show print preview for a document
+* `atril-thumbnailer` - to create  png thumbnails from atril supported documents
 
 ### Atril Previewer
 
 Steps to test:
 
 1. Open terminal and execute `atril-previewer` for some pdf-document - for example `atril-previewer /usr/share/doc/shared-mime-info/shared-mime-info-spec.pdf`
-1. Check user controls in the opened *MATE Document Previwer* window 
+1. Check user controls in the opened *MATE Document Previwer* window
 1. Close *MATE Document Previwer* window
 
 Expected results:

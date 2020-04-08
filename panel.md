@@ -71,7 +71,6 @@ Expected results:
 
 * user is able to add applet to the MATE Panel, applet looks and operates well.
 
-
 #### Remove applet
 
 Steps to test:

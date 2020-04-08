@@ -13,5 +13,4 @@ Steps to test:
 
 Expected results:
 
-* The ISO-image was correctly mounted and then unmounted. 
-
+* The ISO-image was correctly mounted and then unmounted.

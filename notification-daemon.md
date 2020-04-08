@@ -33,8 +33,7 @@ Expected results:
 
 * notification is shown on user-specified monitor.
 
-
-## Test do not disturb mode (since Ubuntu 19.10)
+## Test "Do Not Disturb" mode (since Ubuntu 19.10)
 
 Steps to test:
 

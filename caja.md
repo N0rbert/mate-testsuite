@@ -102,7 +102,7 @@ Steps to test:
 
 Expected results:
 
-   * Caja opened extra pane in the right of already opened pane.
+* Caja opened extra pane in the right of already opened pane.
 
 Press `<F3>` again to close the extra pane.
 
@@ -144,7 +144,7 @@ Steps to test:
 1. Open Caja
 1. Select *Edit* → *Backgrounds and Emblems*
 
-TBW (see [ this AskUbuntu Q&A](https://askubuntu.com/a/1157888/66509))
+TBW (see [this AskUbuntu Q&A](https://askubuntu.com/a/1157888/66509))
 
 ---
 
@@ -179,7 +179,6 @@ Steps to test:
 Expected results:
 
 * archive is created. Caja is able to open it with Engrampa using specified password.
-
 
 ## Network connections and removable drives
 
@@ -246,10 +245,10 @@ Steps to test:
 
        cat <<EOF > ~/.config/caja/scripts/Open-Terminal-Here
        #!/bin/bash
-       
+
        # Created by oss-lvr (https://github.com/oss-lvr)
        # Open a terminal from anywhere
-       
+
        mate-terminal $CAJA_SCRIPT_CURRENT_URI
        EOF
 
@@ -345,7 +344,6 @@ Expected results:
 
 * The *File conflict* window is shown, it asks user to view differences. Pressing *Differences* will lead to Meld open for file comparison.
 
-
 ### Installing third-party extensions
 
 #### Dropbox
@@ -363,16 +361,53 @@ Installation:
 * on 16.04 LTS it is installable with manual steps with method from [this AskUbuntu Q&A](https://askubuntu.com/a/1132783/66509):
 
       sudo apt-get install tortoisehg-nautilus caja-extensions-common python-caja
-        
+
       mkdir -p ~/.local/share/caja-python/extensions
       cp /usr/share/nautilus-python/extensions/nautilus-thg.py ~/.local/share/caja-python/extensions/caja-thg.py
-        
+
       sudo apt-get purge tortoisehg-nautilus
       sudo apt-get autoremove
       sudo apt-get install tortoisehg mercurial
 
 * on 18.04 LTS and 19.04 you can use `sudo apt-get install tortoisehg-caja`;
-* on 19.10 and 20.04 LTS it is not installable.
+
+* on 19.10 it may be installed from [19.04 packages](https://packages.ubuntu.com/source/disco/tortoisehg) manually:
+
+      # 1. Get packages from 19.04 repository
+      cd ~/Downloads
+      wget http://archive.ubuntu.com/ubuntu/pool/universe/t/tortoisehg/tortoisehg_4.8.1-0.1_all.deb
+      wget http://archive.ubuntu.com/ubuntu/pool/universe/t/tortoisehg/tortoisehg-caja_4.8.1-0.1_all.deb
+
+      # 2. Install the packages
+      sudo apt-get install ./tortoisehg*.deb -y
+
+* on 20.04 LTS we can use [experimental packages from Debian](https://packages.debian.org/source/experimental/mercurial):
+
+      # 1. Get the newest Mercurial with Python 3 support
+      cd ~/Downloads
+      wget http://httpredir.debian.org/debian/pool/main/m/mercurial/mercurial-common_5.3.1-1+exp1_all.deb
+      wget http://httpredir.debian.org/debian/pool/main/m/mercurial/mercurial_5.3.1-1+exp1_amd64.deb
+
+      # 2. Install Mercurial packages
+      sudo apt-get install ./mercurial*.deb -y
+
+      # 3. Get dependencies for TortoiseHg
+      sudo apt install python3-all-dev python3-pyqt5 python3-pyqt5.qsci -y
+
+      # 4. Get sources of TortoiseHg
+      hg clone https://bitbucket.org/tortoisehg/thg
+      cd thg
+      hg checkout 5.3.1
+
+      # 5. Compile TortoiseHg using Python 3
+      sudo ln -s /usr/bin/python3 /usr/local/bin/python
+      make local
+      sudo python3 setup.py install
+      sudo rm /usr/local/bin/python
+
+      # 6. Install TortoiseHg extension for Caja
+      mkdir -p ~/.local/share/caja-python/extensions
+      cp /usr/local/share/nautilus-python/extensions/nautilus-thg.py ~/.local/share/caja-python/extensions/caja-thg.py
 
 After installation restart Caja with `caja -q && caja`.
 
@@ -394,7 +429,7 @@ Installation:
 * for 16.04 LTS, 18.04 LTS and 19.04 install RabbitVCS with method similar to [this AskUbuntu Q&A](https://askubuntu.com/a/1149104/66509):
 
       sudo apt install rabbitvcs-cli python-caja python-tk git mercurial subversion
-        
+
       mkdir -p ~/.local/share/caja-python/extensions
       cd ~/.local/share/caja-python/extensions
       wget https://raw.githubusercontent.com/rabbitvcs/rabbitvcs/v0.16/clients/caja/RabbitVCS.py
@@ -404,7 +439,7 @@ Installation:
 * for 19.10 use:
 
       sudo apt install rabbitvcs-cli python-caja python-tk git mercurial subversion
-        
+
       mkdir -p ~/.local/share/caja-python/extensions
       cd ~/.local/share/caja-python/extensions
       wget https://raw.githubusercontent.com/rabbitvcs/rabbitvcs/v0.17.1/clients/caja/RabbitVCS.py
@@ -414,13 +449,12 @@ Installation:
 * for 20.04 LTS use:
 
       sudo apt install rabbitvcs-cli python3-caja python3-tk git mercurial subversion
-      
+
       mkdir -p ~/.local/share/caja-python/extensions
       cd ~/.local/share/caja-python/extensions
       wget https://raw.githubusercontent.com/rabbitvcs/rabbitvcs/v0.18/clients/caja/RabbitVCS.py
       caja -q
       caja
-
 
 Steps to test:
 
@@ -429,11 +463,11 @@ Steps to test:
 
    * Prepare folders which are controlled by version control systems:
 
-          mkdir /tmp/vcs
-          git init /tmp/vcs/git
-          hg init /tmp/vcs/hg
-          svnadmin create /tmp/vcs/svn
-          touch /tmp/vcs/{git,hg,svn}/empty
+         mkdir /tmp/vcs
+         git init /tmp/vcs/git
+         hg init /tmp/vcs/hg
+         svnadmin create /tmp/vcs/svn
+         touch /tmp/vcs/{git,hg,svn}/empty
 
      and navigate to the `/tmp/vcs` folder using Caja. Make right mouse click on each folded and select *Commit*.
 
