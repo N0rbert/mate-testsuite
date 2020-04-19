@@ -385,8 +385,8 @@ Installation:
 
       # 1. Get the newest Mercurial with Python 3 support
       cd ~/Downloads
-      wget http://httpredir.debian.org/debian/pool/main/m/mercurial/mercurial-common_5.3.1-1+exp1_all.deb
-      wget http://httpredir.debian.org/debian/pool/main/m/mercurial/mercurial_5.3.1-1+exp1_amd64.deb
+      wget http://httpredir.debian.org/debian/pool/main/m/mercurial/mercurial-common_5.3.2-1+exp1_all.deb
+      wget http://httpredir.debian.org/debian/pool/main/m/mercurial/mercurial_5.3.2-1+exp1_amd64.deb
 
       # 2. Install Mercurial packages
       sudo apt-get install ./mercurial*.deb -y
@@ -397,13 +397,12 @@ Installation:
       # 4. Get sources of TortoiseHg
       hg clone https://bitbucket.org/tortoisehg/thg
       cd thg
-      hg checkout 5.3.1
+      hg checkout 5.3.2
 
       # 5. Compile TortoiseHg using Python 3
-      sudo ln -s /usr/bin/python3 /usr/local/bin/python
+      sudo apt-get install python-is-python3
       make local
       sudo python3 setup.py install
-      sudo rm /usr/local/bin/python
 
       # 6. Install TortoiseHg extension for Caja
       mkdir -p ~/.local/share/caja-python/extensions
