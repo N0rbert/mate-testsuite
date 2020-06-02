@@ -329,6 +329,66 @@ Also check the Caja window for the interface elements from the table:
 
 [^2]: to get FileManager Actions submenu we need to create custom action from `fma-config-tool` - press *File* → *New action*, go to *Command* tab and the following into *Path* - `zenity --info --text=%b` and then click *File* → *Save*. Then close Caja with `caja -q` and open it again, select some item and make right click on it, then select *FileManager-Actions actions* → *New Caja Action*. This will end with showing Information window with the text indicating current item name.
 
+### Using SeaHorse in Caja
+
+Caja has functionality to sign, encrypt and decrypt objects. This is done by using `mate-seahorse-tool` under the hood. The `caja-seahorse` package should be installed and `libcaja-seahorse` extenstion should be enabled in the Caja settings too. 
+
+To test signing, encryption and decryption one needs to create new PGP key using SeaHorse:
+
+1. Open Passwords and Keys (or `seahorse`)
+1. Click "+" to add new key and specify its type as *GPG key*
+1. Provide details in the opened window - at least *Full Name*, *Email Address*
+1. Click *Create*
+1. In the opened window named *Passphrase for New PGP Key* provide new password twice
+1. Click *OK*
+
+#### Test PGP signing
+
+Steps to test:
+
+1. Open Caja
+1. Select file (for example `file`)
+1. Click *Edit* → *Sign*
+1. In the opened window named *Choose Signer* specify signer and press OK, provide password
+1. Double-click on the file named `file.sig`
+
+Expected results:
+
+* File was signed successfully, the `file.sig` file was created, double-click on it show notification with text like 
+
+  > file: Good Signature  
+  > Signed by User <usermail> on 2020-01-01
+
+#### Test PGP encryption
+
+Steps to test:
+
+1. Open Caja
+1. Select file (for example `file`)
+1. Click *Edit* → *Encrypt...*
+1. In the opened window named *Encryption setting* select recipient, choose *Sign message as* and click OK
+
+Expected results:
+
+* File was encrypted successfully, the `file.pgp` file was created.
+
+#### Test PGP decryption
+
+Steps to test:
+
+1. Open Caja
+1. Double-click the `file.pgp` file
+1. Choose destination and filename for decrypted file and click *Save*
+
+Expected results:
+
+* User was prompted for password, the notification with text like 
+
+  > file: Good Signature  
+  > Signed by User <usermail> on 2020-01-01
+
+  and then decrypted file appeared in the selected destination with given filename.
+
 ### Detecting text file conflicts
 
 Caja has functionality to check text file conflicts using Meld.
@@ -385,8 +445,8 @@ Installation:
 
       # 1. Get the newest Mercurial with Python 3 support
       cd ~/Downloads
-      wget http://httpredir.debian.org/debian/pool/main/m/mercurial/mercurial-common_5.3.2-1+exp1_all.deb
-      wget http://httpredir.debian.org/debian/pool/main/m/mercurial/mercurial_5.3.2-1+exp1_amd64.deb
+      wget ftp://173.44.32.10/debian/pool/main/m/mercurial/mercurial-common_5.3.2-1+exp1_all.deb
+      wget ftp://173.44.32.10/debian/pool/main/m/mercurial/mercurial_5.3.2-1+exp1_amd64.deb
 
       # 2. Install Mercurial packages
       sudo apt-get install ./mercurial*.deb -y
@@ -528,3 +588,65 @@ running caja_self_check_icon_container
 ```
 
 and zero exit-code (check it with `echo $?`).
+
+## Desktop
+
+### Launch of symlink'ed application
+
+Steps to test:
+
+1. Open MATE Terminal and create symbolic link on Desktop to some application with `ln -s /usr/bin/xclock ~/Desktop/xclock`
+1. Click on just created `xclock` symlink
+
+Expected results:
+
+* the `xclock` application is launched
+
+### Launch of *.desktop*-file copied from `/usr/share/applications`
+
+Steps to test:
+
+1. Copy some *.desktop*-file from `/usr/share/applications` to `~/Desktop` by using Caja or by using MATE Terminal (for example `cp /usr/share/applications/firefox.desktop ~/Desktop`)
+1. Clink on just copied *desktop* file
+1. In the opened window click on the *Mark as Trusted* button
+
+Expected results:
+
+* the file is *.desktop*-file is copied, the application is launched by clicking on this file.
+
+### Using symbolic links to file or folder on Desktop
+
+Steps to test:
+
+1. Open Caja
+1. Select needed file or folder and then click *Make Link* for it
+1. Move just created link to the `~/Desktop` folder
+1. Double click on just moved link on the Desktop
+
+Expected results:
+
+* user is able to create symbolic link to file or folder and place it on the `~/Desktop`, clicking on this link opens the corresponding file or folder.
+
+### Drag and drop objects from Caja to Desktop
+
+Steps to test:
+
+1. Open Caja
+1. Select some files or folders, drag and drop them to the Desktop area
+
+Expected results:
+
+* user is able to drag and drop files or folders from file manager to Destkop area.
+
+### Copy, move and paste objects from/to Desktop
+
+Steps to test:
+
+1. Open Caja
+1. Select some files or folders, copy or move them from or to Desktop area
+
+Expected results:
+
+* user is able to copy or move files or folders from or to Desktop area.
+
+

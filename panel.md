@@ -83,6 +83,28 @@ Expected results:
 
 * user is able to remove applet from the MATE Panel, removing the applet do not crash the Panel.
 
+### Add and test some useful applets
+
+#### Clock applet
+
+Steps to test:
+
+1. Move mouse cursor above top MATE Panel
+1. Do a right mouse click
+1. Select *Add to Panel*
+1. Choose *Clock* applet
+1. Do right mouse click on newly added Clock applet, select *Preferences*
+1. Switch to *Location* tab and add your favorite locations
+1. Switch to *General* tab and uncheck all checkboxes then check them back
+1. Switch to *Weather* tab and change all values
+1. Close Clock Preferences window
+1. Click on Clock applet
+
+Expected results:
+
+* user is able to add new locations, view calendar, weather, date and time in them.
+ 
+
 ## Panel reset
 
 Any panel may be reseted to its default view for current panel layout. Do not reset panel appearance on your daily driver systems without screenshot or other way of backup.

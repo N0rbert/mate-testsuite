@@ -21,4 +21,3 @@ Below is the table of plugins in various Ubuntu versions:
 | Date in statusbar            | +         | +         | +     | +     | +         |
 | Fullscreen with double-click | +         | +         | +     | +     | +         |
 | Reload Image                 | +         | +         | +     | +     | +         |
-

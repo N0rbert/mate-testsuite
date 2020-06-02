@@ -38,4 +38,3 @@ Steps to test:
 Expected results:
 
 * The application scanned all fonts and then showed fonts for the search query.
-
