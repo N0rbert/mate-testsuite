@@ -452,7 +452,7 @@ Installation:
       sudo apt-get install ./mercurial*.deb -y
 
       # 3. Get dependencies for TortoiseHg
-      sudo apt install python3-all-dev python3-pyqt5 python3-pyqt5.qsci -y
+      sudo apt install python3-all-dev python3-pyqt5 python3-pyqt5.qsci python3-iniparse -y
 
       # 4. Get sources of TortoiseHg
       hg clone https://foss.heptapod.net/mercurial/tortoisehg/thg
