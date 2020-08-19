@@ -455,7 +455,7 @@ Installation:
       sudo apt install python3-all-dev python3-pyqt5 python3-pyqt5.qsci -y
 
       # 4. Get sources of TortoiseHg
-      hg clone https://bitbucket.org/tortoisehg/thg
+      hg clone https://foss.heptapod.net/mercurial/tortoisehg/thg
       cd thg
       hg checkout 5.3.2
 
