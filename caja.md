@@ -441,12 +441,12 @@ Installation:
       # 2. Install the packages
       sudo apt-get install ./tortoisehg*.deb -y
 
-* on 20.04 LTS we can use [experimental packages from Debian](https://packages.debian.org/source/experimental/mercurial):
+* on 20.04 LTS we can use packages from 20.10:
 
       # 1. Get the newest Mercurial with Python 3 support
       cd ~/Downloads
-      wget ftp://173.44.32.10/debian/pool/main/m/mercurial/mercurial-common_5.3.2-1+exp1_all.deb
-      wget ftp://173.44.32.10/debian/pool/main/m/mercurial/mercurial_5.3.2-1+exp1_amd64.deb
+      wget http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial-common_5.5.1-1_all.deb
+      wget http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_5.5.1-1_amd64.deb
 
       # 2. Install Mercurial packages
       sudo apt-get install ./mercurial*.deb -y
@@ -457,7 +457,7 @@ Installation:
       # 4. Get sources of TortoiseHg
       hg clone https://foss.heptapod.net/mercurial/tortoisehg/thg
       cd thg
-      hg checkout 5.3.2
+      hg checkout 5.5.1
 
       # 5. Compile TortoiseHg using Python 3
       sudo apt-get install python-is-python3
@@ -465,6 +465,29 @@ Installation:
       sudo python3 setup.py install
 
       # 6. Install TortoiseHg extension for Caja
+      mkdir -p ~/.local/share/caja-python/extensions
+      cp /usr/local/share/nautilus-python/extensions/nautilus-thg.py ~/.local/share/caja-python/extensions/caja-thg.py
+
+* for 20.10 we can use Mercurial packages from *universe* pocket and the following method:
+
+
+      # 1. Get the newest Mercurial with Python 3 support
+      sudo apt-get install mercurial
+
+      # 2. Get dependencies for TortoiseHg
+      sudo apt install python3-all-dev python3-pyqt5 python3-pyqt5.qsci python3-iniparse -y
+
+      # 3. Get sources of TortoiseHg
+      hg clone https://foss.heptapod.net/mercurial/tortoisehg/thg
+      cd thg
+      hg checkout 5.5.1
+
+      # 4. Compile TortoiseHg using Python 3
+      sudo apt-get install python-is-python3
+      make local
+      sudo python3 setup.py install
+
+      # 5. Install TortoiseHg extension for Caja
       mkdir -p ~/.local/share/caja-python/extensions
       cp /usr/local/share/nautilus-python/extensions/nautilus-thg.py ~/.local/share/caja-python/extensions/caja-thg.py
 
