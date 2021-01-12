@@ -103,7 +103,41 @@ Steps to test:
 Expected results:
 
 * user is able to add new locations, view calendar, weather, date and time in them.
- 
+
+#### Workspace Switcher
+
+##### Setting workspace switcher preferences
+
+Steps to test:
+
+1. Move mouse cursor above top MATE Panel
+1. Do a right mouse click
+1. Select *Add to Panel*
+1. Choose *Workspace Switcher* applet
+1. Do right mouse click on newly added *Workspace Switcher* applet, select *Preferences*
+1. Set *Switcher* to *Show only the current workspace*, then to *Show all workspaces in* to `2` *rows*, then back to `1` row
+1. Set *Number of workspaces* to `8` and then back to `4`
+1. Set new *Workspace names* by double clicking on their names (*Workspace 1* and so on), check *Show workspace names in switcher* and then uncheck it
+
+Expected results:
+
+* workspace switcher correctly reacts on changing of its preferences.
+
+##### Dragging windows between workspaces
+
+Steps to test:
+
+1. Move mouse cursor above top MATE Panel
+1. Do a right mouse click
+1. Select *Add to Panel*
+1. Choose *Workspace Switcher* applet
+1. Open some application on first workspace
+1. Place cursor on the 1st workspace in the *Workspace switcher* applet, press left mouse button and drag the window miniature to other workspace
+1. Move to the workspace with dragged window
+
+Expected results:
+
+* workspace switcher shows window contour on the first workspace, then this window got moved to other workspace.
 
 ## Panel reset
 
